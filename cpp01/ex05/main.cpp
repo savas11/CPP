@@ -4,9 +4,9 @@ int main(int ac,char** av)
 {
     if(ac == 2)
     {
-        Harl True;
-        std::string level(av[1]);
-        True.complain(level);
+        Harl harl;
+        std::string arg(av[1]);
+        harl.complain(arg);
     }
     return(0);
 }

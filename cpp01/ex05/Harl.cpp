@@ -17,21 +17,11 @@ void Harl::error (void)
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level)
-{
-    Harl b;
-    int i = 0;
-    void (Harl::*function[4])(void) =
-	{
-		&Harl::debug,
-		&Harl::info,
-		&Harl::warning,
-		&Harl::error
-	};
-    std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    for (;level.compare(str[i]) && i < 4; i++)
-    {
-
-    }
-    return((i == 4) ? (void)(NULL) : (b.*function[i])());
+void Harl::complain ( std::string arg ) {
+	int i = 0;
+	void (Harl::*ptr[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string diff[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	while(arg.compare(diff[i]))
+		i++;
+	(this->*(ptr[i]))();
 }
