@@ -14,7 +14,7 @@ public:
 	void setRawBits(int const raw);
 	Fixed(); //Default const
 	Fixed(const Fixed &); //Copy const
-	Fixed& operator=(const Fixed&); // esittir operatoru
+	Fixed& operator=(const Fixed &obj); // esittir operatoru
 	~Fixed(); //Destructor
 
 	Fixed(const int);
