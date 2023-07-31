@@ -7,7 +7,7 @@ Claptrap::Claptrap()
 
 Claptrap::~Claptrap()
 {
-	///destroy
+	a///destroyy
 }
 
 void attack(const std::string& target)
