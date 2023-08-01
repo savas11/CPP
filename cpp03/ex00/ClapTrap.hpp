@@ -5,18 +5,18 @@
 
 class ClapTrap{
 private:
-	std::string _name;
-	const int healt = 10;
-	const int attackdamage = 0;
-	const int energy = 10;
+	std::string const _name;
+	const int hitPoints;
+	const int energyPoints;
+	const int attackDamage;
 public:
-	Claptrap::Claptrap();
-	Claptrap::~Claptrap();
+	ClapTrap();
+	~ClapTrap();
 
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-	std::string getter(void);
-	std::string setter(std::string name);
+	std::string ClapTrap::getname() const;
+	int getHitPoints() const;
 };
