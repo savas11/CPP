@@ -5,11 +5,12 @@ int main()
 	ClapTrap c("Leonardo");
 	ClapTrap a("Rafiel");
 
-	// c.attack("Savas");
-	// a.attack("Ozgur");
+	c.attack("Rafiel");
+	a.attack("Leonardo");
 
-	// c.takeDamage(5);
-	// b.beRepaired(5);
+	c.takeDamage(5);
+	a.beRepaired(5);
+
 }
 
 /*Not Defteri
