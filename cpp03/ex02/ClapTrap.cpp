@@ -7,6 +7,11 @@ ClapTrap::ClapTrap(std::string name) : _name(name), hitPoints(10), energyPoints(
 	std::cout << "ClapTrap " << name << " has " << " | " << "Hit Points :" << hitPoints << " | " << " Energy Point : " << this->energyPoints << " | " << " Take Damage : "<< attackDamage << " | " << std::endl;
 }
 
+ClapTrap::ClapTrap()
+{
+    std::cout << " ClapTrap Default constructer called" << std::endl;
+}
+
 ClapTrap &ClapTrap::operator=(const ClapTrap& copy) 
 {
     this->_name = copy.getname();
@@ -62,6 +67,11 @@ void ClapTrap::status()
 
 std::string ClapTrap::getname() const {
     return (this->_name);
+}
+
+void ClapTrap::setname(std::string name) const
+{
+    name = this->_name;
 }
 
 int ClapTrap::getHitPoints() const {
