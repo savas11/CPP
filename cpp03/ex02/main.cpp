@@ -1,18 +1,15 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-	ScavTrap r("Robocop");
-	ScavTrap s("Terminator");
+	{
+		FragTrap k("Kermit");
+		FragTrap e("Elmo");
 
-	r.attack("Terminator");
-	s.beRepaired(1);
-	r.takeDamage(2);
-	s.beRepaired(2);
-	r.guardGate();
-	s.guardGate();
-
-	r.status();
-	s.status();
-
+	// k.guardGate();
+	k.highFivesGuys();
+	e.takeDamage(5);
+	// e.highFivesGuys();
+	std::cout << k ;
+	}
 	return (0);
 }
