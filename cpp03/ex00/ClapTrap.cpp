@@ -32,22 +32,32 @@ void ClapTrap::attack(const std::string& target) // Saldiri yapmak
     this->energyPoints--;
 }
 
-void ClapTrap::takeDamage(unsigned int _attackDamage) //Hasar almak
+void ClapTrap::takeDamage(unsigned int amount) //Hasar almak
 {
-    this->attackDamage -= _attackDamage;
-    if(this->attackDamage <= 0) { std::cout << "TakeDamage :"<< this->_name << " take damage is death :/" << std::endl;  } 
+    this->attackDamage += amount;
+    if(this->attackDamage >= 10) { std::cout << "TakeDamage :"<< this->_name << " take damage is death :/" << std::endl;  } 
     else {std::cout << "TakeDamage : "<<  "ClapTrap " << this->_name << " attacks " << this->attackDamage << " points of damage! " << std::endl; }
 }
 
-void ClapTrap::beRepaired(unsigned int health) // Can point arttirmak
+void ClapTrap::beRepaired(unsigned int amount) // Can point arttirmak
 {
     if(this->hitPoints > 0)
     {
-    this->hitPoints += health;
+    this->hitPoints += amount;
     std::cout << "Be Repaired : "<<  "ClapTrap " << this->_name << " be reapaired " << this->hitPoints << " points of repair! " << std::endl;
     }
     else
         std::cout << "Be Repaired :" << this->_name << "Hit Point == 0 don't be repaired :(" << std::endl;
+}
+
+void ClapTrap::status()
+{
+    if(this->attackDamage >= 10)
+    {
+        std::cout << "Status ClapTrap : " << this->_name << " he died because he was damaged." << std::endl;
+    }
+    else
+        std::cout << "Status ClapTrap : " << this->_name << " has " << " | " << "Hit Points :" << this->hitPoints << " | " << " Energy Point : " << this->energyPoints << " | " << " Take Damage : "<< this->attackDamage << " | " << std::endl;
 }
 
 std::string ClapTrap::getname() const {

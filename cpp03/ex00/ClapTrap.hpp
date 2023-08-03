@@ -25,5 +25,5 @@ public:
 	void setHitPoints(int amount);
 	void setEnergyPoints(int amount);
 	void setAttackDamage(int amount);
-
+	void status();
 };
