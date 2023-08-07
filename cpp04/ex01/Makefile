@@ -1,5 +1,5 @@
 NAME = brain
-CC = g++ -std=c++98
+CC = g++
 CFLAGS = -Wall -Wextra -Werror
 SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)

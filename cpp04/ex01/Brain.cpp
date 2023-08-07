@@ -25,7 +25,10 @@ Brain& Brain::operator=(const Brain& src){
     return(*this);
 }
 
-const std::string Brain::getIdeas()const{
+const std::string Brain::getIdeas(size_t i)const{
+    if(i < 100)
+        return(this->_ideas[i]);
+    else
         return("Brain Shutdown because, there is only 100 ideas per brain.");
 }
 
