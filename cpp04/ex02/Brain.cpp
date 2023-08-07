@@ -1,18 +1,18 @@
 #include "Brain.hpp"
 
 Brain::Brain() {
-    std::cout << "Brain constructor called\n";
+    std::cout << "Brain constructor called" << std::endl;
     for (int i = 0; i < 100; ++i) {
-        ideas[i] = "some animalistic ideas";
+        ideas[i] = "Dusunuyorum oyleyse varim";
     }
 }
 
 Brain::~Brain() {
-    std::cout << "Brain destructor called\n";
+    std::cout << "Brain destructor called" << std::endl;
 }
 
 Brain::Brain(const Brain& copy) {
-    std::cout << "Brain copy constructor called\n";
+    std::cout << "Brain copy constructor called" << std::endl;
     *this = copy;
 }
 

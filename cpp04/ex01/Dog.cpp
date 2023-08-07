@@ -1,13 +1,12 @@
 #include "Dog.hpp"
 
 Dog::Dog() {
-    std::cout << "Dog constructor called\n";
+    std::cout << "Dog constructor called" << std::endl;
     Animal::type = "Dog";
-    this->brain = new Brain();
 }
 
 Dog::Dog(const Dog& copy) {
-    std::cout << "Dog copy constructor called\n";
+    std::cout << "Dog copy constructor called" << std::endl;
     *this = copy;
 }
 
@@ -18,14 +17,14 @@ Dog &Dog::operator=(const Dog& copy) {
 }
 
 void Dog::makeSound() const {
-    std::cout << "woof woof\n";
+    std::cout << "Hav Hav Havvvvv" << std::endl;
 }
 
 Brain *Dog::getBrain() const {
-    return this->brain;
+    return brain;
 }
 
 Dog::~Dog() {
-    std::cout << "Dog destructor called\n";
+    std::cout << "Dog destructor called" << std::endl;;
     delete brain;
 }
