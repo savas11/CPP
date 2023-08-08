@@ -32,6 +32,6 @@ int main()
         delete meta;
         delete cat;            
     }
-
+    system("leaks animal");
     return 0;
 }
