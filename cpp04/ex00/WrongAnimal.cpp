@@ -32,5 +32,5 @@ void WrongAnimal::setType(std::string type) {
 }
 
 void WrongAnimal::makeSound() const {
-    std::cout << "Wrong Animal cibili cibili" << std::endl;
+    std::cout << "Wrong Animal Sound" << std::endl;
 }

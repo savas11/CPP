@@ -12,26 +12,27 @@ int main()
         const Animal* i = new Cat();
         std::cout << j->getType() << " " << std::endl;
         std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); 
-        j->makeSound();
+        j->makeSound(); 
+        i->makeSound();
         meta->makeSound();
         
         delete meta;
         delete j;
         delete i;
     }
-    //WrongAnimal
+    std::cout << "\n";
+    std::cout << "\n";
+    // WrongAnimal
     {
-        const WrongAnimal* meta = new WrongAnimal();
-        const WrongAnimal* cat = new WrongCat();
+        const WrongAnimal* wmeta = new WrongAnimal();
+        const WrongAnimal* wcat = new WrongCat();
 
-        std::cout << meta->getType() << " " << std::endl;
-        std::cout << cat->getType() << " " << std::endl;
-        cat->makeSound();
-        meta->makeSound();
-        delete meta;
-        delete cat;            
+        std::cout << wmeta->getType() << " " << std::endl;
+        std::cout << wcat->getType() << " " << std::endl;
+        wcat->makeSound();
+        wmeta->makeSound();
+        delete wmeta;
+        delete wcat;            
     }
-    system("leaks animal");
     return 0;
 }

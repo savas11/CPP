@@ -1,5 +1,4 @@
 #include "Dog.hpp"
-#include "Brain.hpp"
 
 Dog::Dog(): Animal()
 {
@@ -45,7 +44,7 @@ Dog& Dog::operator=(const Dog& src)
 
 void Dog::makeSound(void)const
 {
-    std::cout << this->getType() << " says: HawHav" << std::endl;
+    std::cout << this->getType() << " Hav Hav Havvv " << std::endl;
 }
 
 void Dog::getIdeas(void)const {
