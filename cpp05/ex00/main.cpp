@@ -1,38 +1,20 @@
 #include "Bureaucrat.hpp"
 
 int main(void)
-{
+{	
+	try { Bureaucrat b6("b6", 155); }
+	catch(const std::exception& e){ std::cerr << e.what() << '\n'; }
+
+	try { Bureaucrat b7("b7", 0); }
+	catch(const std::exception& e){ std::cerr << e.what() << '\n';}
+
+	std::cout << std::endl;
+	
 	Bureaucrat b1("b1", 150);
 	Bureaucrat b2("b2", 1);
 	Bureaucrat b3("b3", 10);
 	Bureaucrat b4(b3);
 	b4 = b2;
-
-	std::cout << std::endl;
-	
-	try
-	{
-		Bureaucrat b6("b6", 155);
-
-
-
-		
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	try
-	{
-		Bureaucrat b7("b7", 0);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	std::cout << std::endl;
 
 	std::cout << b1 << std::endl;
 	std::cout << b2 << std::endl;
