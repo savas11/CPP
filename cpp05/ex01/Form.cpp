@@ -1,5 +1,5 @@
 #include "Form.hpp"
-
+//orthodox
 Form::Form(std::string _name, int _mustGrade, int _mustExecute): isSigned(0), mustGrade(_mustGrade), mustExecute(_mustExecute) {
 		this->setmustGrade(_mustGrade);
 		this->setmustExecute(_mustExecute);
@@ -22,15 +22,7 @@ Form& Form::operator=(Form& c) {
 	this->setmustExecute(c.getmustExecute());
 	return *this;
 }
-
-void	Form::beSigned(Bureaucrat& c) {
-	if (c.getGrade() > this->getmustGrade()) {
-		throw GradeTooLowException();
-	} else {
-		std::cout << this->getName() << ", signed from " << c.getName() << std::endl;
-	}
-}
-
+//getter setter
 const std::string	Form::getName() const {return this->name;}
 const bool			Form::getSigned() const {return this->isSigned;}
 const int			Form::getmustGrade() const {return this->mustGrade;}
@@ -56,6 +48,14 @@ void	Form::setmustExecute(int mustExecuteTmp) {
 		throw GradeTooHightException();
 	} else {
 		const_cast<int&>(this->mustExecute) = const_cast<int&>(mustExecuteTmp);
+	}
+}
+//be signed fonk
+void	Form::beSigned(Bureaucrat& c) {
+	if (c.getGrade() > this->getmustGrade()) {
+		throw GradeTooLowException();
+	} else {
+		std::cout << this->getName() << ", signed from " << c.getName() << std::endl;
 	}
 }
 

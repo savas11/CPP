@@ -40,10 +40,8 @@ void	Bureaucrat::setName(std::string _n) { const_cast<std::string&>(this->name) 
 int		Bureaucrat::getGrade(void) const { return(this->grade); }
 void	Bureaucrat::setGrade(int _grade) {
 	if (_grade > 150) {
-		this->grade = 0;
 		throw GradeTooLowException();
 	} else if (_grade < 1) {
-		this->grade = 0;
 		throw GradeTooHighException();
 	} else {
 		this->grade = _grade;

@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name) {
-	//std::cout << "default constructor called" << std::endl;
+	std::cout << "default constructor called" << std::endl;
 	this->setGrade(_grade);
 }
 
@@ -15,6 +15,11 @@ const Bureaucrat& Bureaucrat::operator=(const Bureaucrat& _copy) {
 	return *this;
 }
 
+Bureaucrat::~Bureaucrat() { 
+	std::cout << "deconstructor" << std::endl; 
+	}
+
+//not dusurme yukseltme
 void	Bureaucrat::increment(void) {
 	this->setGrade(this->getGrade() - 1);
 }
@@ -22,26 +27,28 @@ void	Bureaucrat::decrement(void) {
 	this->setGrade(this->getGrade() + 1);
 }
 
-Bureaucrat::~Bureaucrat() { 
-	//std::cout << "deconstructor" << std::endl; 
+//getter setter methodlari
+const	std::string Bureaucrat::getName(void) const { 
+	return(this->name); 
 	}
-
-const	std::string Bureaucrat::getName(void) const { return(this->name); }
 
 void	Bureaucrat::setName(std::string _n) 
 {
-	 const_cast<std::string&>(this->name) = const_cast<std::string&>(_n); 
+	const_cast<std::string&>(this->name) = const_cast<std::string&>(_n); 
 }
-int		Bureaucrat::getGrade(void) const { return(this->grade); }
+
+int		Bureaucrat::getGrade(void) const 
+{ 
+	return(this->grade);
+}
+
 void	Bureaucrat::setGrade(int _grade) {
 	if (_grade > 150) 
 	{
-		this->grade = 0;
 		throw GradeTooLowException();
 	} 
 	else if (_grade < 1) 
 	{
-		this->grade = 0;
 		throw GradeTooHighException();
 	} 
 	else 
@@ -54,7 +61,7 @@ std::ostream&   operator<<(std::ostream& o, const Bureaucrat& b) {
 	o << b.getName() << ", grade level is " << b.getGrade();
 	return (o);
 }
-
+//exception
 const char *Bureaucrat::GradeTooHighException::what() const throw() 
 {
 	return "Grade is must lower than";
