@@ -1,4 +1,4 @@
-NAME = serialize
+NAME = base
 CFLAGS = -Wall -Wextra
 RM = rm -rf
 CC = c++

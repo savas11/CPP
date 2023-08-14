@@ -8,10 +8,12 @@ int main()
     Data data;
 	Serializer s;
 
-    data.name = "Ferhat";
-    data.department = "Security";
-    data.job = "Guard";
-    data.age = 25;
+	std::cout << std::endl;
+	
+    data.name = "Ozgur";
+    data.department = "Medicine";
+    data.job = "Radiology and Nuclear Technician";
+    data.age = 28;
     data.isActive = true;
 
 	std::cout << "Name: " << data.name << std::endl;
@@ -26,10 +28,5 @@ int main()
 
 	std::cout << serialize_input << std::endl;
 	std::cout << deserialize_output << std::endl;
-	
-    std::cout << "Name: " << deserialize_output->name << std::endl;
-	std::cout << "Department: " << deserialize_output->department << std::endl;
-	std::cout << "Job: " << deserialize_output->job << std::endl;
-	std::cout << "Age: " << deserialize_output->age << std::endl;
-	std::cout << "IsActive: " << deserialize_output->isActive << std::endl;
+	std::cout << std::endl;
 }
