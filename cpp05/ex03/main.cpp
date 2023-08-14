@@ -8,23 +8,18 @@ int main(void)
 {
 	try
 	{
-		std::cout << std::endl;
 		Intern RandomIntern;
 		Form* Form;
-		Bureaucrat huseyin("ali", 1);
-
-		std::cout << std::endl;
-
+		Bureaucrat b1("b1", 1);
 		std::cout << "===========ShrubberyCreationForm Creation Test===========" << std::endl;
-		Form = RandomIntern.makeForm("ShrubberyCreationForma", "shrubbery");
+		Form = RandomIntern.makeForm("ShrubberyCreationForm", "shrubbery");
 		std::cout << Form->getName();
-
-		std::cout << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+
 	try
 	{
 		Intern someRandomIntern;
@@ -35,29 +30,4 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-/* 
-	std::cout << "============RobotomyRequestForm Creation Test============" << std::endl;
-	Form = RandomIntern.makeForm("robotomy request", "robotomy");
-	Form->beSigned(fatma);
-	fatma.signForm(*Form);
-	
-	std::cout << std::endl;
-
-	std::cout << "===========PresidentialPardonForm Creation Test===========" << std::endl;
-	Form = RandomIntern.makeForm("presidential pardon", "presidential");
-	Form->beSigned(fatma);
-	fatma.signForm(*Form);
-	delete Form;
-	std::cout << std::endl;
-
-	std::cout << "===============UndefinedForm Creation Test===============" << std::endl;
-	Form = RandomIntern.makeForm("undefined", "undefined");
-	delete Form;
-	std::cout << std::endl;
-	return 0; */
-
-/* 	Intern someRandomIntern;
-	Form* rrf;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender"); */
 }

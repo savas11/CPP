@@ -1,4 +1,4 @@
-NAME = form
+NAME = intern
 CC = g++
 FLAG = -Wall -Wextra -Werror 
 SOURCE = $(wildcard *.cpp)

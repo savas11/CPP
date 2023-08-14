@@ -78,7 +78,7 @@ const char *AForm::GradeTooHightException::what() const throw() {
 }
 
 std::ostream&	operator<<(std::ostream& o, AForm& n) {
-	o << "name " << n.getName()
+	o << n.getName()
 	<< " signed " << n.getSigned()
 	<< " Grade " << n.getmustGrade()
 	<< " Execute " << n.getmustExecute();

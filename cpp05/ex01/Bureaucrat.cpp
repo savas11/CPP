@@ -27,7 +27,7 @@ Bureaucrat::~Bureaucrat() { std::cout << red << "Bureaucrat deconstructor" << wh
 
 void	Bureaucrat::signForm(Form& c) {
 	if (c.getmustGrade() < this->getGrade()) {
-		std::cout << this->getName() << " couldn't sign " << c.getName() << " because " << std::endl;
+		std::cout << this->getName() << " couldn't sign " << c.getName() << std::endl;
 		throw GradeTooLowException();
 	} else {
 		c.setisSigned(1);

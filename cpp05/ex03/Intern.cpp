@@ -1,8 +1,7 @@
 #include "Intern.hpp"
-#include <algorithm>
 
 Intern::Intern() {
-	std::cout << green << "The slave has been created" << white << std::endl;
+	std::cout << green << "The intern has been created" << white << std::endl;
 }
 
 Intern::Intern(Intern& c) {
@@ -15,16 +14,15 @@ Intern& Intern::operator=(Intern& c) {
 }
 
 Intern::~Intern() {
-	std::cout << red << "The slave need a break" << white << std::endl;
+	std::cout << red << "The intern need a break" << white << std::endl;
 }
 
 Form*  Intern::makeForm(std::string s1, std::string s2) {
 	std::string name[3] = {"PresidentialPardonForm", "RobotomyRequesdfstForm", "ShrubberyCreationForm"};
 	int i = 0;
-	for (; name[i].find(s1) && i < 3;i ++) {
+	for (; name[i].find(s1) && i < 3;i++) {
 		;
 	}
-	std::cout << i << std::endl;
 	switch (i)
 	{
 		case 0:
