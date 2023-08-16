@@ -1,60 +1,67 @@
-#pragma once
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
 #include <iostream>
 
 template<typename T>
-class Array {
-	private:
-		int size_;
-		T	*arr;
-	public:
-		Array() : size_(0), arr(new T[0]) {}
-		Array(unsigned int n) : size_(n), arr(new T[n]) {
-			for (int i = 0; i < size_; i++) {
-				this->arr[i] = 0;
-			}
-		}
-		Array(const Array& c) : size_(c.size_), arr(new T[c.size_]) {
-			for (int i = 0; i < size_; i++) {
-				this->arr[i] = c.arr[i];
-			}
-		}
-		~Array(){
-			delete[] arr;
-			arr = NULL;
-		}
+class Array
+{
+    private:
+    T* elements;
+    size_t len;
 
-		Array	&operator=(const Array& c) {
-			delete[] this->arr;
-			this->arr = NULL;
-			this->size_ = c.size_;
-			this->arr = new T[this->size_];
-			for (int i = 0; i < this->size_; i++) {
-				this->arr[i] = c.arr[i];
-			}
-			return *this;
-		}
+    public:
+    Array(){
+        len = 0;
+        elements = nullptr;
+        std::cout << "Array default constructor called\n";
+    }
 
-		T		&operator[](unsigned int n) {
-			if (n < 0 || n >= (unsigned int)size_)
-				throw Array::OutOfBoundException();
-			return arr[n];
-		}
+    Array(unsigned int size) : len(size){
+        elements = new T[size];
+        std::cout << "Array parameter constructor called\n";
+    }
 
-		const T		&operator[](unsigned int n) const {
-			if (n < 0 || n >= size_)
-				throw Array::OutOfBoundException();
-			return arr[n];
-		}
+    Array(const Array &copy){
+        len = copy.len;
+        elements = new T[len];
+        for(size_t i = 0; i < copy.len; i++)
+            elements[i] = copy.elements[i];
+        std::cout << "Array copy constructor called\n";
+    }
 
-		size_t	size() {
-			return this->size_;
-		}
+    Array& operator=(const Array &copy){
+        if(this == &copy)
+            return(*this);
+        delete[] elements;
+        len = copy.len;
+        elements = new T[len];
+        for(size_t i = 0; i<len; i++)
+            elements[i] = copy.elements[i];
+        std::cout << "Array copy assignment operator called\n";
+        return(*this);
+    }
+    ~Array(){
+        delete[] elements;
+        std::cout << "Array destructor called\n";
+    }
 
-		class OutOfBoundException : public std::exception {
-			public:
-				virtual const char *what() const throw() {
-					return "Out of Bounds";
-				}
-		};
+    T& operator[](size_t index){
+        if(index >= len)
+            throw Array::outOfBounds();
+        return(elements[index]);
+    }
+
+    unsigned int size() const{
+        return(len);
+    }
+
+    class outOfBounds : public std::exception{
+        public:
+        const char *what() const throw(){
+            return("\n <<< index is out of bounds >>> \n");
+        }
+    };
 };
+
+#endif

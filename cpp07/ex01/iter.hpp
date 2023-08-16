@@ -7,8 +7,10 @@
 #define BLUE "\x1B[34m"
 
 template <typename Iterator>
-void iter(Iterator* arr,  size_t len, void (*func)(Iterator const &)) {
+
+void iter(Iterator* arr,  size_t len, void (*fonk)(Iterator const &)) 
+{
     for(size_t i = 0; i < len; i++) {
-        func(arr[i]);
+        fonk(arr[i]);
     }
 }
