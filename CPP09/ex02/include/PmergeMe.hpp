@@ -1,29 +1,37 @@
-#pragma once
+#ifndef PMERGEME_H
+#define PMERGEME_H
 
 #include <iostream>
-#include <stdlib.h>
 #include <vector>
 #include <deque>
-#include <chrono>
-#include <algorithm>
+#include <sys/time.h>
+#include <ctime>
 
 class PmergeMe {
+    private:
+        std::vector<int> vec_num;
+        std::deque<int> deq_num;
+        int ac;
     public:
-        PmergeMe(int ac, char *av[]);
-        ~PmergeMe() {}
-        void Info_begin(void);
+        PmergeMe();
+        ~PmergeMe();
+        PmergeMe(const PmergeMe &p);
+        PmergeMe& operator=(const PmergeMe &p);
+        
+        PmergeMe(int ac, char **av);
+        void Info_begin(int flag);
+        void printtime(clock_t start_time, clock_t end_time, std::string cont);
+
         //Deque
         void mergeDeque(void);
         void mergeInsertionSort(std::deque<int>& values);
         void merge(std::deque<int>& left, std::deque<int>& right, std::deque<int>& result);
+
         //vector
         void mergeVector(void);
-        // void mergeInsertionSort(std::vector<int>& data);
         void mergeInsertionSort(std::vector<int>& data, std::vector<int>& temp, int left, int right);
         void merge(std::vector<int>& data, std::vector<int>& temp, int left, int middle, int right);
-    
-    private:
-        std::vector<int> numbers;
-        std::deque<int> deque_num;
-        int ac;
+
 };
+
+#endif
