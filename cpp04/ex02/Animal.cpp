@@ -25,9 +25,9 @@ Animal &Animal::operator=(const Animal& src)
     return(*this);
 }
 
-void Animal::makeSound(void)const{
+// void Animal::makeSound(void)const{
     
-}
+// }
 
 std::string Animal::getType(void)const
 {

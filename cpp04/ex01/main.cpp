@@ -36,7 +36,7 @@ int main()
      a->getIdeas();
 
      delete(a);
-     ///system("leaks brain");
+     //system("leaks brain");
      return(0);
  
 }

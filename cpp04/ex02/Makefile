@@ -1,4 +1,4 @@
-NAME = brain
+NAME = abstract
 CC = g++ -std=c++98
 CFLAGS = -Wall -Wextra -Werror
 SRC = $(wildcard *.cpp)

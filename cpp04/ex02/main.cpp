@@ -6,8 +6,17 @@
 
 int main()
 {
-        const Animal* a = new Dog();
-        std::cout << a->getType();
-        a->makeSound();
-        delete a;
+    
+    Animal* animal1 = new Cat();
+    WrongAnimal *animal2 = new WrongCat();
+    std::cout << std::endl;
+
+    animal1->makeSound();
+    animal2->makeSound(); 
+
+    std::cout << std::endl;
+    delete animal1; 
+    delete animal2;
+
+    //system("leaks abstract");
 }

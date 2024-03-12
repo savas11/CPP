@@ -5,8 +5,7 @@
 
 class Ice : public AMateria
 {
-
-public:
+	public:
 	Ice();
 	Ice( const Ice &ref );
 	Ice &operator=( const Ice &ref );
